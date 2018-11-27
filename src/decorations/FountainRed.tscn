@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://resources/environment/decorations/wall_fountain_top.png" type="Texture" id=1]
+[ext_resource path="res://resources/environment/decorations/wall_fountain_mid_red_anim_f0.png" type="Texture" id=2]
+[ext_resource path="res://resources/environment/decorations/wall_fountain_mid_red_anim_f1.png" type="Texture" id=3]
+[ext_resource path="res://resources/environment/decorations/wall_fountain_mid_red_anim_f2.png" type="Texture" id=4]
+[ext_resource path="res://resources/environment/decorations/wall_fountain_basin_red_anim_f0.png" type="Texture" id=5]
+[ext_resource path="res://resources/environment/decorations/wall_fountain_basin_red_anim_f1.png" type="Texture" id=6]
+[ext_resource path="res://resources/environment/decorations/wall_fountain_basin_red_anim_f2.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="FountainRed" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 0.0539074, 31.9466 )
+frames = SubResource( 2 )
+animation = "default"
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( 0.0546207, 63.9276 )
+frames = SubResource( 3 )
+animation = "default"
+frame = 1
+playing = true
+
+

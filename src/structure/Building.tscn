@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/structure/Building.gd" type="Script" id=1]
+[ext_resource path="res://resources/structures/castle.png" type="Texture" id=2]
+[ext_resource path="res://resources/structures/castle-selected.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 62.3381, 67.1957 )
+
+[node name="Building" type="Area2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+team = null
+building_name = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -0.165512, 2.0421 )
+scale = Vector2( 0.910847, 1 )
+shape = SubResource( 1 )
+
+[node name="UnselectedSprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 2 )
+
+[node name="SelectedSprite" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 3 )
+
+

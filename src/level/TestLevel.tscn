@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/tiles/WallTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://src/tiles/SlideTileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://src/structure/Barracks.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/unit/Worker.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/unit/Warrior.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/unit/Mage.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/structure/Door.tscn" type="PackedScene" id=7]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="WallTileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 589807, 11, 0, 589814, 536870925, 0, 589815, 536870925, 0, 589816, 536870925, 0, 589817, 536870925, 0, 589818, 536870925, 0, 589819, 536870925, 0, 589820, 536870925, 0, 589821, 536870925, 0, 589822, 536870925, 0, 589823, 536870925, 0, 524371, 11, 0, 851951, 11, 0, 1048584, 12, 0, 1048585, 12, 0, 1048586, 12, 0, 1048587, 12, 0, 1048588, 12, 0, 1048589, 12, 0, 1048590, 12, 0, 1048591, 12, 0, 1048592, 12, 0, 1048593, 12, 0, 1048594, 12, 0, 1048595, 12, 0, 1048596, 12, 0, 1048597, 12, 0, 1048598, 12, 0, 1048599, 12, 0, 1048600, 12, 0, 1048601, 12, 0, 1048602, 12, 0, 1048603, 12, 0, 1048604, 12, 0, 1048605, 12, 0, 1048606, 12, 0, 1048607, 12, 0, 1048608, 12, 0, 1048609, 12, 0, 1048610, 12, 0, 1048611, 12, 0, 1048612, 12, 0, 1048613, 12, 0, 1048614, 12, 0, 1048615, 12, 0, 1048616, 12, 0, 1048617, 12, 0, 1048618, 12, 0, 1048619, 12, 0, 1048620, 12, 0, 1048621, 12, 0, 1048622, 12, 0, 1048623, 12, 0, 1048624, 12, 0, 1048625, 12, 0, 1048626, 12, 0, 1048627, 12, 0, 1048628, 12, 0, 1048629, 12, 0, 1048630, 12, 0, 1048631, 12, 0, 1048632, 12, 0, 1048633, 12, 0, 1048634, 12, 0, 1048635, 12, 0, 1048636, 12, 0, 1179733, 11, 0, 1572848, 11, 0, 1638390, 12, 0, 1638391, 12, 0, 1638392, 12, 0, 1638393, 12, 0, 1638394, 12, 0, 1638395, 12, 0, 1638396, 12, 0, 1638397, 12, 0, 1638398, 12, 0, 1638399, 12, 0, 1572948, 11, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="SlideTileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 256, 256 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 16
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 65536, 536870916, 0, 131072, 4, 0 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="Barracks" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 329.234, 438.428 )
+life = 100
+
+[node name="Worker2" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 467.527, 479.607 )
+
+[node name="Warrior" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 728.722, 476.646 )
+
+[node name="Warrior3" parent="." index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 753.208, 476.646 )
+
+[node name="Warrior2" parent="." index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 681.109, 476.646 )
+
+[node name="Mage" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 659.623, 478.3 )
+
+[node name="Mage2" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 685.47, 478.3 )
+
+[node name="Door" parent="." index="9" instance=ExtResource( 7 )]
+
+position = Vector2( 1222.71, 479.468 )
+spawn_rate = 5
+
+

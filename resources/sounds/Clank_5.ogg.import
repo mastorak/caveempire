@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Clank_5.ogg-da31e38a1fd33a5204b327ba13332642.oggstr"
+
+[deps]
+
+source_file="res://resources/sounds/Clank_5.ogg"
+dest_files=[ "res://.import/Clank_5.ogg-da31e38a1fd33a5204b327ba13332642.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

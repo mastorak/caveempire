@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/item/Spell.gd" type="Script" id=1]
+[ext_resource path="res://resources/items/spell/wizard-spell-0.png" type="Texture" id=2]
+[ext_resource path="res://resources/items/spell/wizard-spell-1.png" type="Texture" id=3]
+[ext_resource path="res://resources/items/spell/wizard-spell-2.png" type="Texture" id=4]
+[ext_resource path="res://resources/items/spell/wizard-spell-3.png" type="Texture" id=5]
+[ext_resource path="res://resources/items/spell/wizard-spell-4.png" type="Texture" id=6]
+[ext_resource path="res://resources/items/spell/wizard-spell-5.png" type="Texture" id=7]
+[ext_resource path="res://resources/items/spell/wizard-spell-6.png" type="Texture" id=8]
+[ext_resource path="res://resources/items/spell/wizard-spell-7.png" type="Texture" id=9]
+[ext_resource path="res://resources/items/spell/wizard-spell-8.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5.31778, 5.14932 )
+
+[node name="Spell" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+damage = 15
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "default"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.846395, -0.0769444 )
+shape = SubResource( 2 )
+
+

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://resources/environment/decorations/banner-tall-blue.png" type="Texture" id=1]
+
+[node name="Banner" type="Sprite" index="0"]
+
+z_index = -2
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+

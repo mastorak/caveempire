@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/structure/Building.gd" type="Script" id=1]
+[ext_resource path="res://resources/structures/castle.png" type="Texture" id=2]
+[ext_resource path="res://resources/structures/castle-selected.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 62.3381, 67.1957 )
+
+[node name="Barracks" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+life = 0
+team = 0
+building_name = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( -0.165512, 2.0421 )
+scale = Vector2( 0.910847, 1 )
+shape = SubResource( 1 )
+
+[node name="UnselectedSprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 2 )
+
+[node name="SelectedSprite" type="Sprite" parent="." index="2"]
+
+texture = ExtResource( 3 )
+
+[node name="ProgressBar" type="ProgressBar" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -60.0
+margin_top = -60.0
+margin_right = 61.0
+margin_bottom = -38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+percent_visible = true
+
+

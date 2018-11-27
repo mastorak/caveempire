@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Tower-Defense_Looping.ogg-3aae1f066a403209b2777725531f635b.oggstr"
+
+[deps]
+
+source_file="res://resources/sounds/Tower-Defense_Looping.ogg"
+dest_files=[ "res://.import/Tower-Defense_Looping.ogg-3aae1f066a403209b2777725531f635b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

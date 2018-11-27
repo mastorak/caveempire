@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://resources/environment/decorations/torch0.png" type="Texture" id=1]
+[ext_resource path="res://resources/environment/decorations/torch1.png" type="Texture" id=2]
+[ext_resource path="res://resources/environment/decorations/torch2.png" type="Texture" id=3]
+[ext_resource path="res://resources/environment/decorations/torch3.png" type="Texture" id=4]
+[ext_resource path="res://resources/environment/decorations/lighttex.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Torch" type="AnimatedSprite"]
+
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+
+[node name="Light2D" type="Light2D" parent="." index="0"]
+
+enabled = true
+editor_only = false
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+texture_scale = 3.0
+color = Color( 0.929688, 0.468262, 0.0581055, 1 )
+energy = 0.7
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = -10
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Range", "Shadow" ]
+
+
