@@ -18,7 +18,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 21.2625, 21.8155 )
+extents = Vector2( 21.2625, 32.8536 )
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -50,7 +50,7 @@ life = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0.858536, 10.088 )
+position = Vector2( 0.542984, -0.798768 )
 shape = SubResource( 1 )
 
 [node name="Weapon" parent="." index="1" instance=ExtResource( 2 )]
@@ -82,10 +82,10 @@ anchor_bottom = 0.0
 margin_left = -26.0
 margin_top = -36.0
 margin_right = 30.0
-margin_bottom = 4.0
+margin_bottom = -20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
@@ -102,6 +102,6 @@ texture_progress = ExtResource( 14 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
-_sections_unfolded = [ "Textures" ]
+_sections_unfolded = [ "Focus", "Mouse", "Textures" ]
 
 

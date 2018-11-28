@@ -3,7 +3,7 @@
 [ext_resource path="res://src/gui/BuildingInfo.gd" type="Script" id=1]
 [ext_resource path="res://resources/fonts/YatraOne16.res" type="DynamicFont" id=2]
 
-[node name="BuildingInfo" type="HBoxContainer" index="0"]
+[node name="BuildingInfo" type="HBoxContainer"]
 
 anchor_left = 0.0
 anchor_top = 0.0

@@ -18,7 +18,7 @@ func _ready():
 	load_nodes()
 	
 func _process(delta):
-	if current_building.is_training:
+	if current_building!=null && current_building.is_training:
 		training_bar.visible=true
 		training_bar.value=current_building.get_training_progress()
 	else:
@@ -67,7 +67,7 @@ func _on_queue_changed():
 func update_training_info():
 		
 	for child in training_queue_container.get_children():
-		training_queue_container.remove_child(child)
+		child.queue_free()
 	
 	if current_building.is_training:
 		if current_building.object_under_training==Global.UNIT_NAME.WARRIOR:

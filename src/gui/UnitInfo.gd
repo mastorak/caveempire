@@ -43,7 +43,7 @@ func clear_unit_info():
 	name_label.text=""
 	Global.update_description("")
 	for child in $MultiUnitContainer.get_children():
-		$MultiUnitContainer.remove_child(child)
+		child.queue_free()
 	
 	
 func load_unit_info(unit):

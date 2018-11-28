@@ -123,7 +123,7 @@ position = Vector2( 1080.31, 478.246 )
 
 [node name="Warrior2" parent="." index="14" instance=ExtResource( 10 )]
 
-position = Vector2( 1033.09, 478.077 )
+position = Vector2( 1019.09, 478.077 )
 
 [node name="BannerBlue" parent="." index="15" instance=ExtResource( 11 )]
 

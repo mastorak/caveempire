@@ -22,23 +22,23 @@ var level1_scene=load("res://src/level/Level1.tscn")
 var level2_scene=load("res://src/level/Level2.tscn")
 
 func _ready():
-	reset_level()
-	
 	rock_counter=get_node("../CanvasLayer/TopPanel/RockCounter/NumberOfItems")
 	crystal_counter=get_node("../CanvasLayer/TopPanel/CrystalCounter/NumberOfItems")
 	gold_counter=get_node("../CanvasLayer/TopPanel/GoldCounter/NumberOfItems")
 	food_counter=get_node("../CanvasLayer/TopPanel/FoodCounter/NumberOfItems")
 	top_panel=get_node("../CanvasLayer/TopPanel")
 	dialogs=get_node("../CanvasLayer/Dialogs")
-		
+	
+	reset_level()	
 		
 func reset_level():
-	gold=0
-	rocks=0
+	gold=330
+	rocks=330
 	crystals=0
 	food=0
 	load_level_properties()
 	get_tree().paused = true
+	top_panel.clear_objectives()
 	
 
 func victory():
@@ -49,8 +49,7 @@ func victory():
 	if(current_level.get_name()=='Level2'):
 		Global.properties["campaign"]["level"]="level3"
 		Global.save_properties()	
-	
-	top_panel.update_objectives(current_level.get_objectives())
+		
 	get_tree().paused = true
 	get_node("../CanvasLayer/Dialogs/LevelEnd").visible=true
 	
@@ -139,10 +138,11 @@ func load_level():
 		new_level=level1_scene.instance()
 	elif new_level_number=="level2":
 		new_level=level2_scene.instance()
-				
-	remove_child(current_level)
+
+	current_level.queue_free()
 	add_child(new_level)
 	reset_level()
+	current_level=new_level
 
 	dialogs=get_node("../CanvasLayer/Dialogs")
 	dialogs.get_node("LevelEnd").visible=false

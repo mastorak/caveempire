@@ -9,14 +9,6 @@ var multi_select
 
 var command_object
 
-var worker_panel_scene = load("res://src/gui/WorkerPanel.tscn")
-var fighter_panel_scene = load("res://src/gui/FighterPanel.tscn")
-var mage_panel_scene = load("res://src/gui/MagePanel.tscn")
-
-var building_panel_scene = load("res://src/gui/BuildingPanel.tscn")
-var building_info_scene=load("res://src/gui/BuildingInfo.tscn")
-var unit_info_scene=load("res://src/gui/UnitInfo.tscn")
-
 var cursor_normal = load("res://resources/ui/cursor/cursorHand_grey.png")
 var cursor_sword = load("res://resources/ui/cursor/cursorSword_silver.png")
 var cursor_arrow_right = load("res://resources/ui/cursor/arrowSilver_right.png")
@@ -29,14 +21,8 @@ var cursor_arrow_bottom_right = load("res://resources/ui/cursor/arrowSilver_bott
 var cursor_arrow_bottom_left = load("res://resources/ui/cursor/arrowSilver_bottom-left.png")
 
 
-var worker_panel
-var fighter_panel
-var mage_panel
-var building_panel
 var command_container
 var info_container
-var building_info
-var unit_info
 
 var unit_selected=false
 var building_selected=false
@@ -57,14 +43,7 @@ func _ready():
 	
 	camera_extend_x=$LevelViewport.get_viewport().size.x/2
 	camera_extend_y=$LevelViewport.get_viewport().size.y/2
-	
-	worker_panel=worker_panel_scene.instance()
-	fighter_panel=fighter_panel_scene.instance()
-	mage_panel=mage_panel_scene.instance()
-	building_panel=building_panel_scene.instance()
-	building_info=building_info_scene.instance()
-	unit_info=unit_info_scene.instance()
-	
+		
 	command_container=get_node("CanvasLayer/BottomPanel/HSplitContainer/CommandContainer")
 	info_container=get_node("CanvasLayer/BottomPanel/HSplitContainer/InfoContainer")
 
@@ -262,32 +241,33 @@ func _draw():
 
 func switch_panel_to_multi_unit(units):
 	clear_bottom_panel()
-	unit_info.load_multi_units(units)
-	info_container.add_child(unit_info)	
+	info_container.get_node("UnitInfo").load_multi_units(units)
+	info_container.get_node("UnitInfo").visible=true
 
 func switch_command_panel(object):
 	clear_bottom_panel()
 		
 	if object.is_unit():
 		if object.unit_name==Global.UNIT_NAME.WORKER:
-			command_container.add_child(worker_panel)
+			command_container.get_node("WorkerPanel").visible=true
 		elif object.unit_name==Global.UNIT_NAME.WARRIOR:
-			command_container.add_child(fighter_panel)
+			command_container.get_node("FighterPanel").visible=true
 		elif object.unit_name==Global.UNIT_NAME.MAGE:
-			command_container.add_child(mage_panel)
-		unit_info.load_unit_info(object)
-		info_container.add_child(unit_info)	
+			command_container.get_node("MagePanel").visible=true
+		info_container.get_node("UnitInfo").load_unit_info(object)
+		info_container.get_node("UnitInfo").visible=true
 	elif object.is_building():
-		building_info.load_building_info(object)
-		command_container.add_child(building_panel)
-		info_container.add_child(building_info)	
+		info_container.get_node("BuildingInfo").load_building_info(object)
+		info_container.get_node("BuildingInfo").visible=true
+		command_container.get_node("BuildingPanel").visible=true
+		
 		
 func clear_bottom_panel():
-	unit_info.clear_unit_info()
+	info_container.get_node("UnitInfo").clear_unit_info()
 	for child in command_container.get_children():
-		command_container.remove_child(child)
+		child.visible=false
 	for child in info_container.get_children():
-		info_container.remove_child(child)
+		child.visible=false
 
 func deselect_objects(objects):
 	for i in objects:

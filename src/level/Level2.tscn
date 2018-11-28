@@ -23,7 +23,7 @@
 [ext_resource path="res://src/decorations/Torch.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/structure/Barracks.tscn" type="PackedScene" id=22]
 
-[node name="Level2" type="Node2D" index="0"]
+[node name="Level2" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -304,34 +304,34 @@ position = Vector2( 3158.01, 64.028 )
 [node name="Torch3" parent="." index="49" instance=ExtResource( 21 )]
 
 position = Vector2( -399.225, -9.72852 )
-frame = 3
 
 [node name="Torch4" parent="." index="50" instance=ExtResource( 21 )]
 
 position = Vector2( 2395.6, -308.982 )
-frame = 1
+frame = 2
 
 [node name="Torch5" parent="." index="51" instance=ExtResource( 21 )]
 
 position = Vector2( 2521.08, 473.414 )
+frame = 1
 
 [node name="Torch6" parent="." index="52" instance=ExtResource( 21 )]
 
 position = Vector2( 3946, 1206.01 )
+frame = 1
 
 [node name="Torch7" parent="." index="53" instance=ExtResource( 21 )]
 
 position = Vector2( 5227.42, 1208.53 )
-frame = 3
 
 [node name="Torch8" parent="." index="54" instance=ExtResource( 21 )]
 
 position = Vector2( 6325.06, 732.719 )
-frame = 3
 
 [node name="Torch2" parent="." index="55" instance=ExtResource( 21 )]
 
 position = Vector2( 895.727, 176.305 )
+frame = 1
 
 [node name="Barracks" parent="." index="56" instance=ExtResource( 22 )]
 
