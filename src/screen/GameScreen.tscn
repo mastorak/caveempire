@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/screen/GameScreen.gd" type="Script" id=1]
 [ext_resource path="res://src/screen/Level.gd" type="Script" id=2]
-[ext_resource path="res://src/level/Level2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/level/Level1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/screen/LevelViewport.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/screen/ParallaxBackground.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/gui/BottomPanel.tscn" type="PackedScene" id=6]
@@ -22,7 +22,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="Level2" parent="Level" index="0" instance=ExtResource( 3 )]
+[node name="Level1" parent="Level" index="0" instance=ExtResource( 3 )]
 
 [node name="LevelViewport" parent="." index="1" instance=ExtResource( 4 )]
 

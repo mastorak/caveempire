@@ -73,28 +73,28 @@ func move_camera(direction):
 		camera_velocity.y=0
 
 func  left_limit():
-	if	$LevelViewport.position.x>=Global.camera_limits.x-200:
+	if	$LevelViewport.position.x>Global.camera_limits.x-200:
 		return true
 	else:
 		$LevelViewport.position.x=Global.camera_limits.x-200
 		return false	
 
 func  right_limit():
-	if	$LevelViewport.position.x<=Global.camera_limits.x+Global.camera_limits.width-get_viewport().size.x:
+	if	$LevelViewport.position.x<Global.camera_limits.x+Global.camera_limits.width-get_viewport().size.x/2:
 		return true
 	else:
-		$LevelViewport.position.x=Global.camera_limits.x+Global.camera_limits.width-get_viewport().size.x
+		$LevelViewport.position.x=Global.camera_limits.x+Global.camera_limits.width-get_viewport().size.x/2
 		return false	
 
 func  bottom_limit():
-	if	$LevelViewport.position.y<=Global.camera_limits.height-500:
+	if	$LevelViewport.position.y<Global.camera_limits.height+200:
 		return true
 	else:
-		$LevelViewport.position.y=Global.camera_limits.height-500
+		$LevelViewport.position.y=Global.camera_limits.height+200
 		return false	
 
 func  top_limit():
-	if	$LevelViewport.position.y>=Global.camera_limits.y-200:
+	if	$LevelViewport.position.y>Global.camera_limits.y-200:
 		return true
 	else:
 		$LevelViewport.position.y=Global.camera_limits.y-200
@@ -128,7 +128,7 @@ func handle_mouse_input():
 		Input.set_custom_mouse_cursor(cursor_arrow_left)
 		move_camera(Global.DIRECTION.LEFT)
 		camera_speed=camera_speed_normal
-	if cursor_viewport_position.x>get_viewport().size.x-50 && right_limit():
+	if cursor_viewport_position.x>get_viewport().get_visible_rect ( ).size.x-50 && right_limit():
 		Input.set_custom_mouse_cursor(cursor_arrow_right)
 		move_camera(Global.DIRECTION.RIGHT)
 		camera_speed=camera_speed_normal
@@ -136,21 +136,21 @@ func handle_mouse_input():
 		Input.set_custom_mouse_cursor(cursor_arrow_up)
 		move_camera(Global.DIRECTION.UP)
 		camera_speed=camera_speed_normal
-	if cursor_viewport_position.y>get_viewport().size.y-50 && bottom_limit():
+	if cursor_viewport_position.y>get_viewport().get_visible_rect ( ).size.y-50 && bottom_limit():
 		Input.set_custom_mouse_cursor(cursor_arrow_down)
 		move_camera(Global.DIRECTION.DOWN)
 		camera_speed=camera_speed_normal
 		
 	if cursor_viewport_position.x<50 && cursor_viewport_position.y<50:
 		Input.set_custom_mouse_cursor(cursor_arrow_top_left)
-	if cursor_viewport_position.x<50 && cursor_viewport_position.y>get_viewport().size.y-50:
+	if cursor_viewport_position.x<50 && cursor_viewport_position.y>get_viewport().get_visible_rect ( ).size.y-50:
 		Input.set_custom_mouse_cursor(cursor_arrow_bottom_left)
 	if cursor_viewport_position.x>get_viewport().size.x-50 && cursor_viewport_position.y<50:
 		Input.set_custom_mouse_cursor(cursor_arrow_top_right)
-	if cursor_viewport_position.x>get_viewport().size.x-50 && cursor_viewport_position.y>get_viewport().size.y-50:
+	if cursor_viewport_position.x>get_viewport().size.x-50 && cursor_viewport_position.y>get_viewport().get_visible_rect ( ).size.y-50:
 		Input.set_custom_mouse_cursor(cursor_arrow_bottom_right)
 	
-	if cursor_viewport_position.x>50 && cursor_viewport_position.x<get_viewport().size.x-50 && cursor_viewport_position.y>50 && cursor_viewport_position.y<get_viewport().get_visible_rect().size.y-50:
+	if cursor_viewport_position.x>50 && cursor_viewport_position.x<get_viewport().get_visible_rect ( ).size.x-50 && cursor_viewport_position.y>50 && cursor_viewport_position.y<get_viewport().get_visible_rect().size.y-50:
 		Input.set_custom_mouse_cursor(cursor_normal)
 		move_camera(Global.DIRECTION.CENTER)	
 	

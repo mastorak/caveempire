@@ -28,7 +28,7 @@ func _ready():
 	food_counter=get_node("../CanvasLayer/TopPanel/FoodCounter/NumberOfItems")
 	top_panel=get_node("../CanvasLayer/TopPanel")
 	dialogs=get_node("../CanvasLayer/Dialogs")
-	
+	current_level=get_children()[0]
 	reset_level()	
 		
 func reset_level():
@@ -55,7 +55,8 @@ func victory():
 	
 
 func load_level_properties():
-	current_level=get_children()[0]
+		
+	print("load " +current_level.get_name())
 	var level_size=calculate_tilemap_size(current_level.get_node("WallTileMap"))
 	Global.camera_limits=level_size
 
@@ -133,16 +134,18 @@ func _on_EndButton_pressed():
 
 func load_level():
 	var new_level_number=Global.get_next_level()
+	print("new level:"+new_level_number)
 	var new_level
 	if new_level_number=="level1":
 		new_level=level1_scene.instance()
 	elif new_level_number=="level2":
 		new_level=level2_scene.instance()
-
+	
+	Global.clear_building_info()
 	current_level.queue_free()
 	add_child(new_level)
-	reset_level()
 	current_level=new_level
+	reset_level()
 
 	dialogs=get_node("../CanvasLayer/Dialogs")
 	dialogs.get_node("LevelEnd").visible=false

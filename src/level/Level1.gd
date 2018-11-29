@@ -16,9 +16,7 @@ func _ready():
 	
 	get_parent().load_intro_text(intro_text,intro_button_text)
 	get_parent().load_end_text(end_text,end_button_text)
-	
-	print("Loading level")
-	
+		
 func _process(delta):
 	check_victory_conditions()
 

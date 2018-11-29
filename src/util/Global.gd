@@ -56,6 +56,9 @@ func console_set_text(text):
 		console_node= get_tree().get_root().get_node("/root/GameScreen/CanvasLayer/BottomPanel/HSplitContainer/ConsolePanel/Label")
 	console_node.text=text
 
+func clear_building_info():
+	var building_info= get_tree().get_root().get_node("/root/GameScreen/CanvasLayer/BottomPanel/HSplitContainer/InfoContainer/BuildingInfo")
+	building_info.current_building=null
 	
 func update_description(text):
 	if description_node==null:

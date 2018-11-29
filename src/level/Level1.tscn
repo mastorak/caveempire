@@ -16,7 +16,7 @@
 [ext_resource path="res://src/decorations/FountainRed.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/decorations/WallGoo.tscn" type="PackedScene" id=15]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 

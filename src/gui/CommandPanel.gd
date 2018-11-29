@@ -72,7 +72,7 @@ func construct_building(building_name):
 		elif building.building_name==Global.BUILDING_NAME.BARRACKS:
 			building.global_position.y=building.global_position.y-(building_extent-unit_extent)+4
 		elif building.building_name==Global.BUILDING_NAME.MAGETOWER:
-			building.global_position.y=building.global_position.y-building_extent-(unit_extent/2)+4
+			building.global_position.y=building.global_position.y-building_extent-(unit_extent/2)+8
 			
 		command_unit.get_parent().add_child(building)
 		Global.console_log(result["message"])
