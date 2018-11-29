@@ -86,7 +86,6 @@ func _ready():
 #set mouse_over from connected event
 func _mouse_over(over):
 	mouse_over = over
-	print(mouse_over)
 
 
 func _on_override_timer_timeout():

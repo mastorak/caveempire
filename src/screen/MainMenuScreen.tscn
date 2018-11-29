@@ -22,7 +22,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="MainMenuScreen" type="Node2D"]
+[node name="MainMenuScreen" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -59,7 +59,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-text = "v0.8b"
+text = "v0.9"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -109,6 +109,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 4 )
 stretch_mode = 0
+_sections_unfolded = [ "Focus" ]
 
 [node name="StartButton" type="TextureButton" parent="MainMenu" index="0"]
 
@@ -122,13 +123,13 @@ margin_right = 95.0
 margin_bottom = 92.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
-enabled_focus_mode = 2
+action_mode = 0
+enabled_focus_mode = 0
 shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
@@ -270,7 +271,7 @@ anchor_bottom = 0.5
 margin_left = 408.0
 margin_top = 109.0
 margin_right = 792.0
-margin_bottom = 589.0
+margin_bottom = 609.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -287,9 +288,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 146.0
-margin_top = 431.0
+margin_top = 452.0
 margin_right = 239.0
-margin_bottom = 455.0
+margin_bottom = 476.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -363,9 +364,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -102.0
-margin_top = -135.0
+margin_top = -148.0
 margin_right = 102.0
-margin_bottom = -95.0
+margin_bottom = -108.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -522,9 +523,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 93.0
-margin_top = 248.0
+margin_top = 239.0
 margin_right = 297.0
-margin_bottom = 354.0
+margin_bottom = 345.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -657,16 +658,40 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="CopyrightContainer" type="VBoxContainer" parent="About" index="5"]
+[node name="engine" type="Label" parent="About" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 135.0
+margin_top = 368.0
+margin_right = 245.0
+margin_bottom = 386.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.129412, 0.101961, 0.0784314, 1 )
+text = "Powered by Godot"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="CopyrightContainer" type="VBoxContainer" parent="About" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 120.0
-margin_top = 385.0
+margin_top = 404.0
 margin_right = 268.0
-margin_bottom = 425.0
+margin_bottom = 444.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1

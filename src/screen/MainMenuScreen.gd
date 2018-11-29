@@ -8,6 +8,7 @@ func _ready():
 
 	var copyright= get_node("About/CopyrightContainer/copyright")
 	copyright.text="© Kostis Mastorakis "+str(year)
+		
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -23,7 +24,6 @@ func _input(event):
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
-
 
 
 func _on_StartButton_pressed():

@@ -34,7 +34,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Worker" type="KinematicBody2D" index="0"]
+[node name="Worker" type="KinematicBody2D"]
 
 position = Vector2( 0.429276, 0.643915 )
 input_pickable = true

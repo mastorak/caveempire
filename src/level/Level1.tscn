@@ -134,22 +134,19 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="Torch" parent="." index="16" instance=ExtResource( 12 )]
 
 position = Vector2( -90.8828, 440.782 )
-frame = 3
 
 [node name="Torch2" parent="." index="17" instance=ExtResource( 12 )]
 
 position = Vector2( 1117.86, 190.854 )
-frame = 3
 
 [node name="Torch3" parent="." index="18" instance=ExtResource( 12 )]
 
 position = Vector2( 1842.65, 20.4486 )
-frame = 3
 
 [node name="Torch4" parent="." index="19" instance=ExtResource( 12 )]
 
 position = Vector2( 3115.01, 418.061 )
-frame = 2
+frame = 3
 
 [node name="BannerRed" parent="." index="20" instance=ExtResource( 13 )]
 

@@ -32,8 +32,8 @@ func _ready():
 	reset_level()	
 		
 func reset_level():
-	gold=330
-	rocks=330
+	gold=0
+	rocks=0
 	crystals=0
 	food=0
 	load_level_properties()
